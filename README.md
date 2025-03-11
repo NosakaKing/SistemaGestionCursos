@@ -8,7 +8,7 @@
 <h2>Entidad Especialidad</h2>
 <p>Registramos su espscialidad y paralelo.</p>
 <p align="center">
-  <img src="https://i.imgur.com/iPDrmap.png">
+  <img src="https://i.imgur.com/SypbAO9.png">
 </p>
 <h2>Entidad Curso</h2>
 <p>Esta entidad es la que contiene las relaciones con especialidad y paralelo</p>
