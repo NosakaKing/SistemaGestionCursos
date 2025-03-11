@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SistemaGestionCursos.Models.IncripcionModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Inscripción</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaIncripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estudiante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Curso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaIncripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estudiante.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curso.Descripcion)
+            </td>
+            <td>
+                    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
