@@ -1,4 +1,4 @@
-<h1 align="center">Prueba Parcial 1👋</h1>
+<h1 align="center">Prueba Parcial 1 - Menú de ramas, cada rama con su asignación👋</h1>
 <h2>Sistema de gestión de Cursos Basico</h2></h2>
 <h2>Entidad Estudiante</h2>
 <p>Empezamos registrando los estudiantes.</p>
