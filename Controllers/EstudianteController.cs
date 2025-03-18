@@ -153,5 +153,28 @@ namespace SistemaGestionCursos.Controllers
         {
             return _context.Estudiantes.Any(e => e.Id == id);
         }
+
+        // Método para obtener la lista de estudiantes en formato JSON
+        [HttpGet]
+        public async Task<IActionResult> GetEstudiantes()
+        {
+            var estudiantes = await _context.Estudiantes.ToListAsync();
+            return Json(estudiantes);
+        }
+        // POST: Estudiante/DeleteEstudianteConfirmed/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteEstudianteConfirmed(int id)
+        {
+            var estudianteModel = await _context.Estudiantes.FindAsync(id);
+            if (estudianteModel != null)
+            {
+                _context.Estudiantes.Remove(estudianteModel);
+                await _context.SaveChangesAsync();
+                return Json(true);
+            }
+            return Json(false);
+        }
+
     }
 }
